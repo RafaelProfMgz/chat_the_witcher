@@ -293,20 +293,20 @@ Funcionalidades essenciais para o lançamento inicial:
 
 Melhorias planejadas para versões futuras:
 
-- [ ] **Temas alternativos:** Escola do Gato, Escola do Grifo, Nilfgaard
-- [ ] **Bestiário interativo:** Galeria visual de monstros com informações
+- [x] **Temas alternativos:** Escola do Gato, Escola do Grifo, Nilfgaard ✅ Sprint 9
+- [x] **Bestiário interativo:** Galeria visual de monstros com informações ✅ Sprint 9
 - [ ] **Mapa interativo:** Localizações importantes do Continente
-- [ ] **Salvamento de conversas:** LocalStorage para persistir histórico
-- [ ] **Exportar conversa:** Download do chat em formato texto/PDF
-- [ ] **Múltiplas personas:** Trocar entre Vesemir, Triss, Dandelion, etc.
+- [x] **Salvamento de conversas:** LocalStorage para persistir histórico ✅ Sprint 7
+- [x] **Exportar conversa:** Download do chat em formato texto/Markdown ✅ Sprint 7
+- [x] **Múltiplas personas:** Trocar entre Vesemir, Triss, Dandelion, Yennefer ✅ Sprint 8
 - [ ] **Modo Quiz:** Trivia sobre The Witcher 3 com placar
-- [ ] **Sugestões rápidas:** Botões de perguntas populares pré-definidas
+- [x] **Sugestões rápidas:** Botões de perguntas populares pré-definidas ✅ Sprint 3
 - [ ] **Efeitos sonoros:** Sons temáticos do jogo (opcional, com toggle)
 - [ ] **PWA:** Instalável como app no celular
 - [ ] **i18n:** Suporte a múltiplos idiomas (PT-BR, EN, PL)
-- [ ] **Markdown nas respostas:** Formatação rica com listas, negrito, etc.
+- [x] **Markdown nas respostas:** Formatação rica com listas, negrito, code blocks, etc. ✅ Sprint 8
 - [ ] **Compartilhamento:** Compartilhar trechos de conversa em redes sociais
-- [ ] **Modo escuro/claro:** Toggle entre temas (padrão: escuro)
+- [x] **Modo escuro/claro:** Toggle entre 4 temas temáticos (Lobo, Gato, Grifo, Nilfgaard) ✅ Sprint 9
 - [ ] **Acessibilidade:** WCAG 2.1 compliance completo
 
 ---
