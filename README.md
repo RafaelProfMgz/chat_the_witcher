@@ -22,8 +22,6 @@
 <!-- Screenshot placeholder -->
 <img src="public/screenshot-placeholder.png" alt="Witcher Oracle Screenshot" width="800" />
 
-_🖼️ Screenshot será adicionado após a conclusão da interface_
-
 </div>
 
 ---
