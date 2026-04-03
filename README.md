@@ -124,7 +124,7 @@ cp .env.example .env.local
 Edite o arquivo `.env.local` e adicione sua API key:
 
 ```env
-NEXT_PUBLIC_GEMINI_API_KEY=sua_api_key_aqui
+GEMINI_API_KEY=sua_api_key_aqui
 ```
 
 ### Passo 4: Rodar o projeto
@@ -157,15 +157,15 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador e comece a 
 
 ### Variáveis de Ambiente
 
-| Variável                     | Obrigatória | Descrição                     |
-| ---------------------------- | ----------- | ----------------------------- |
-| `NEXT_PUBLIC_GEMINI_API_KEY` | ✅ Sim      | Chave da API do Google Gemini |
+| Variável         | Obrigatória | Descrição                     |
+| ---------------- | ----------- | ----------------------------- |
+| `GEMINI_API_KEY` | ✅ Sim      | Chave da API do Google Gemini |
 
 ### Arquivo `.env.local`
 
 ```env
 # Google Gemini API
-NEXT_PUBLIC_GEMINI_API_KEY=sua_api_key_aqui
+GEMINI_API_KEY=sua_api_key_aqui
 ```
 
 ---
