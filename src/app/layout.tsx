@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Cinzel } from "next/font/google";
 import "./globals.css";
 import Background from "@/components/layout/Background";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -90,6 +91,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-witcher-dark text-white antialiased witcher-bg">
+        <Analytics />
         <Background />
         <div className="relative z-10 flex min-h-screen flex-col">
           {children}
