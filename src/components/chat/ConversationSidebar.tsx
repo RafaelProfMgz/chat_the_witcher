@@ -2,14 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Plus,
-  X,
-  Trash2,
-  MessageSquare,
-  Pencil,
-  Check,
-} from "lucide-react";
+import { Plus, X, Trash2, MessageSquare, Pencil, Check } from "lucide-react";
 import type { Conversation } from "@/types/chat";
 
 interface ConversationSidebarProps {
@@ -127,7 +120,10 @@ function ConversationItem({
           />
           <div className="flex-1 min-w-0">
             {isEditing ? (
-              <div className="flex items-center gap-1" onClick={(e) => e.stopPropagation()}>
+              <div
+                className="flex items-center gap-1"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <input
                   ref={inputRef}
                   value={editValue}
@@ -148,7 +144,10 @@ function ConversationItem({
                   }}
                   className="shrink-0 p-0.5 rounded hover:bg-white/10 transition-colors"
                 >
-                  <Check className="w-3 h-3" style={{ color: "var(--witcher-gold)" }} />
+                  <Check
+                    className="w-3 h-3"
+                    style={{ color: "var(--witcher-gold)" }}
+                  />
                 </button>
               </div>
             ) : (
@@ -177,41 +176,41 @@ function ConversationItem({
             </div>
           </div>
         </div>
-
-        {/* Hover action buttons */}
-        <div
-          className="absolute top-2 right-2 flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setEditValue(conversation.title);
-              setIsEditing(true);
-            }}
-            className="p-1.5 rounded-lg hover:bg-white/10 transition-colors"
-            title="Renomear"
-          >
-            <Pencil
-              className="w-3 h-3"
-              style={{ color: "rgba(192, 192, 192, 0.6)" }}
-            />
-          </button>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onDelete();
-            }}
-            className="p-1.5 rounded-lg hover:bg-red-500/20 transition-colors"
-            title="Excluir"
-          >
-            <Trash2
-              className="w-3 h-3"
-              style={{ color: "rgba(220, 80, 80, 0.7)" }}
-            />
-          </button>
-        </div>
       </button>
+
+      {/* Hover action buttons */}
+      <div
+        className="absolute top-2 right-2 flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            setEditValue(conversation.title);
+            setIsEditing(true);
+          }}
+          className="p-1.5 rounded-lg hover:bg-white/10 transition-colors"
+          title="Renomear"
+        >
+          <Pencil
+            className="w-3 h-3"
+            style={{ color: "rgba(192, 192, 192, 0.6)" }}
+          />
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onDelete();
+          }}
+          className="p-1.5 rounded-lg hover:bg-red-500/20 transition-colors"
+          title="Excluir"
+        >
+          <Trash2
+            className="w-3 h-3"
+            style={{ color: "rgba(220, 80, 80, 0.7)" }}
+          />
+        </button>
+      </div>
     </motion.div>
   );
 }
@@ -228,8 +227,7 @@ export default function ConversationSidebar({
 }: ConversationSidebarProps) {
   // Sort conversations by updatedAt descending (most recent first)
   const sorted = [...conversations].sort(
-    (a, b) =>
-      new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
+    (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
   );
 
   return (
@@ -324,7 +322,9 @@ export default function ConversationSidebar({
                       isActive={convo.id === activeConversationId}
                       onSelect={() => onSelectConversation(convo.id)}
                       onDelete={() => onDeleteConversation(convo.id)}
-                      onRename={(title) => onRenameConversation(convo.id, title)}
+                      onRename={(title) =>
+                        onRenameConversation(convo.id, title)
+                      }
                     />
                   ))}
                 </AnimatePresence>
