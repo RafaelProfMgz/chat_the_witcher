@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import type { Conversation, Message } from "@/types/chat";
 import {
   loadConversations,
@@ -8,21 +8,25 @@ import {
   generateTitle,
 } from "@/lib/storage";
 
-function loadInitialConversations(): Conversation[] {
-  const stored = loadConversations();
-  if (stored.length === 0) return [];
-  return [...stored].sort(
+function sortByRecent(convos: Conversation[]): Conversation[] {
+  return [...convos].sort(
     (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
   );
 }
 
 export function useConversations() {
-  const [conversations, setConversations] = useState<Conversation[]>(
-    loadInitialConversations,
-  );
+  const [conversations, setConversations] = useState<Conversation[]>([]);
   const [activeConversationId, setActiveConversationId] = useState<
     string | null
   >(null);
+
+  // Hydrate from localStorage after mount to avoid SSR mismatch
+  useEffect(() => {
+    const stored = loadConversations();
+    if (stored.length > 0) {
+      setConversations(sortByRecent(stored));
+    }
+  }, []);
 
   // Persist helper — wraps setConversations to always save to localStorage
   const updateAndPersist = useCallback(

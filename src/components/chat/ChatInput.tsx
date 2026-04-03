@@ -23,9 +23,7 @@ export default function ChatInput({
     const textarea = textareaRef.current;
     if (!textarea) return;
     textarea.style.height = "auto";
-    const lineHeight = 24;
-    const maxHeight = lineHeight * 4;
-    textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`;
+    textarea.style.height = `${textarea.scrollHeight}px`;
   }, []);
 
   useEffect(() => {
@@ -66,7 +64,7 @@ export default function ChatInput({
           placeholder="Pergunte ao Vesemir sobre The Witcher 3..."
           disabled={isDisabled}
           rows={1}
-          className="glass-input min-h-11 w-full resize-none px-4 py-3 text-sm leading-6 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+          className="glass-input min-h-11 w-full overflow-hidden px-4 py-3 text-sm leading-6 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
           aria-label="Mensagem para Vesemir"
         />
 

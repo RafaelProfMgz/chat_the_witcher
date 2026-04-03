@@ -156,10 +156,10 @@ export default function BestiaryPage() {
       if (normalizedQuery) {
         const nameMatch = normalizeText(monster.name).includes(normalizedQuery);
         const descMatch = normalizeText(monster.description).includes(
-          normalizedQuery
+          normalizedQuery,
         );
         const categoryMatch = normalizeText(monster.category).includes(
-          normalizedQuery
+          normalizedQuery,
         );
         return nameMatch || descMatch || categoryMatch;
       }
@@ -178,17 +178,17 @@ export default function BestiaryPage() {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen overflow-x-hidden">
         {/* Header */}
         <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="glass shrink-0 w-full px-4 sm:px-6 py-4 flex items-center gap-4"
+          className="glass shrink-0 w-full px-4 sm:px-8 py-4 flex items-center gap-4 min-w-0"
         >
           <Link
             href="/"
-            className="glass-button flex items-center gap-2 px-3 py-2 text-sm text-witcher-silver/70 hover:text-witcher-gold-light transition-colors"
+            className="glass-button flex items-center gap-2 px-3 py-2 text-sm text-witcher-silver/70 hover:text-witcher-gold-light transition-colors ml-0"
             style={{ borderRadius: "0.75rem" }}
           >
             <ArrowLeft className="w-4 h-4" />
@@ -243,8 +243,7 @@ export default function BestiaryPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex gap-2 overflow-x-auto pb-2 scrollbar-none"
-            style={{ scrollbarWidth: "none" }}
+            className="flex gap-2 overflow-x-auto pb-2 scroll-smooth"
           >
             {/* "Todos" chip */}
             <button
@@ -261,7 +260,7 @@ export default function BestiaryPage() {
             {MONSTER_CATEGORIES.map((category) => {
               const isActive = activeCategory === category;
               const count = BESTIARY.filter(
-                (m) => m.category === category
+                (m) => m.category === category,
               ).length;
 
               return (
@@ -312,8 +311,9 @@ export default function BestiaryPage() {
                 Nenhum monstro encontrado
               </h3>
               <p className="text-witcher-silver/40 text-sm mt-2 max-w-md">
-                Tente buscar por outro nome ou selecione uma categoria diferente.
-                Talvez o monstro que procuras ainda não tenha sido catalogado.
+                Tente buscar por outro nome ou selecione uma categoria
+                diferente. Talvez o monstro que procuras ainda não tenha sido
+                catalogado.
               </p>
             </motion.div>
           )}

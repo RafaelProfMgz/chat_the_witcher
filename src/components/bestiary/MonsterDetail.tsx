@@ -11,7 +11,10 @@ interface MonsterDetailProps {
 
 function DifficultyStars({ level }: { level: number }) {
   return (
-    <div className="flex items-center gap-0.5" aria-label={`Dificuldade: ${level} de 5`}>
+    <div
+      className="flex items-center gap-0.5"
+      aria-label={`Dificuldade: ${level} de 5`}
+    >
       {Array.from({ length: 5 }, (_, i) => (
         <span
           key={i}
@@ -24,7 +27,13 @@ function DifficultyStars({ level }: { level: number }) {
   );
 }
 
-function Badge({ children, variant = "default" }: { children: React.ReactNode; variant?: "sign" | "oil" | "bomb" | "location" | "default" }) {
+function Badge({
+  children,
+  variant = "default",
+}: {
+  children: React.ReactNode;
+  variant?: "sign" | "oil" | "bomb" | "location" | "default";
+}) {
   const styles: Record<string, string> = {
     sign: "bg-witcher-gold/15 border-witcher-gold/30 text-witcher-gold-light",
     oil: "bg-witcher-purple/20 border-witcher-purple/40 text-purple-300",
@@ -34,13 +43,18 @@ function Badge({ children, variant = "default" }: { children: React.ReactNode; v
   };
 
   return (
-    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border ${styles[variant]}`}>
+    <span
+      className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border ${styles[variant]}`}
+    >
       {children}
     </span>
   );
 }
 
-export default function MonsterDetail({ monster, onClose }: MonsterDetailProps) {
+export default function MonsterDetail({
+  monster,
+  onClose,
+}: MonsterDetailProps) {
   const hasWeaknesses =
     monster.weaknesses.signs.length > 0 ||
     monster.weaknesses.oils.length > 0 ||
@@ -75,7 +89,7 @@ export default function MonsterDetail({ monster, onClose }: MonsterDetailProps) 
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 glass-button p-1.5 rounded-full z-20 hover:bg-white/10 transition-colors"
+          className="absolute top-4 left-5 glass-button p-1.5 rounded-full z-20 hover:bg-white/10 transition-colors"
           aria-label="Fechar detalhes"
         >
           <X className="w-4 h-4 text-witcher-silver/70" />
@@ -122,7 +136,9 @@ export default function MonsterDetail({ monster, onClose }: MonsterDetailProps) 
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {monster.weaknesses.signs.map((sign) => (
-                        <Badge key={sign} variant="sign">{sign}</Badge>
+                        <Badge key={sign} variant="sign">
+                          {sign}
+                        </Badge>
                       ))}
                     </div>
                   </div>
@@ -137,7 +153,9 @@ export default function MonsterDetail({ monster, onClose }: MonsterDetailProps) 
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {monster.weaknesses.oils.map((oil) => (
-                        <Badge key={oil} variant="oil">{oil}</Badge>
+                        <Badge key={oil} variant="oil">
+                          {oil}
+                        </Badge>
                       ))}
                     </div>
                   </div>
@@ -152,7 +170,9 @@ export default function MonsterDetail({ monster, onClose }: MonsterDetailProps) 
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {monster.weaknesses.bombs.map((bomb) => (
-                        <Badge key={bomb} variant="bomb">{bomb}</Badge>
+                        <Badge key={bomb} variant="bomb">
+                          {bomb}
+                        </Badge>
                       ))}
                     </div>
                   </div>
@@ -173,7 +193,9 @@ export default function MonsterDetail({ monster, onClose }: MonsterDetailProps) 
               </h3>
               <div className="flex flex-wrap gap-1.5">
                 {monster.locations.map((loc) => (
-                  <Badge key={loc} variant="location">{loc}</Badge>
+                  <Badge key={loc} variant="location">
+                    {loc}
+                  </Badge>
                 ))}
               </div>
             </div>
