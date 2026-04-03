@@ -36,10 +36,10 @@ const FALLBACK_MODELS = [
 // ---------------------------------------------------------------------------
 
 function getGeminiClient(): GoogleGenerativeAI {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 
   if (!apiKey) {
-    throw new GeminiConfigError("GEMINI_API_KEY is not configured");
+    throw new GeminiConfigError("NEXT_PUBLIC_GEMINI_API_KEY is not configured");
   }
 
   return new GoogleGenerativeAI(apiKey);
@@ -149,7 +149,7 @@ export async function getWitcherResponse(
   const systemPrompt = persona.systemPrompt;
 
   // If the user pinned a specific model via env var, skip the fallback chain
-  const envModel = process.env.GEMINI_MODEL;
+  const envModel = process.env.NEXT_PUBLIC_GEMINI_MODEL;
   const modelsToTry = envModel ? [envModel] : FALLBACK_MODELS;
 
   let lastRetryDelay = 30000;

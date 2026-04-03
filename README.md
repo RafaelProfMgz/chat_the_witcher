@@ -22,7 +22,7 @@
 <!-- Screenshot placeholder -->
 <img src="public/screenshot-placeholder.png" alt="Witcher Oracle Screenshot" width="800" />
 
-*🖼️ Screenshot será adicionado após a conclusão da interface*
+_🖼️ Screenshot será adicionado após a conclusão da interface_
 
 </div>
 
@@ -47,6 +47,7 @@ A interface é construída com um tema **glassmorphism** imersivo, utilizando um
 ## 🎯 Funcionalidades
 
 ### Core
+
 - 💬 Chat conversacional sobre o universo de The Witcher 3
 - 🧙 Respostas contextualizadas na persona do Vesemir
 - 📚 Conhecimento sobre lore, quests, personagens, builds, alquimia e dicas
@@ -54,6 +55,7 @@ A interface é construída com um tema **glassmorphism** imersivo, utilizando um
 - 🎭 Mensagem de boas-vindas temática do Vesemir
 
 ### Interface
+
 - 🪟 Componentes com glassmorphism (glass cards, blur, transparência)
 - 🌌 Background temático com atmosfera dark fantasy
 - ✨ Animações suaves com Framer Motion
@@ -66,16 +68,16 @@ A interface é construída com um tema **glassmorphism** imersivo, utilizando um
 
 ## 🛠️ Stack Tecnológica
 
-| Tecnologia | Versão | Uso |
-|---|---|---|
-| **Next.js** | 16 | Framework React com App Router e API Routes |
-| **TypeScript** | 5 | Tipagem estática |
-| **Tailwind CSS** | 4 | Estilização utility-first e glassmorphism |
+| Tecnologia            | Versão    | Uso                                         |
+| --------------------- | --------- | ------------------------------------------- |
+| **Next.js**           | 16        | Framework React com App Router e API Routes |
+| **TypeScript**        | 5         | Tipagem estática                            |
+| **Tailwind CSS**      | 4         | Estilização utility-first e glassmorphism   |
 | **Google Gemini API** | Free Tier | Motor de IA para respostas contextualizadas |
-| **Framer Motion** | 12 | Animações e transições |
-| **Lucide React** | 1.7 | Ícones |
-| **Jest** | 30 | Testes unitários |
-| **Testing Library** | 16 | Testes de componentes React |
+| **Framer Motion**     | 12        | Animações e transições                      |
+| **Lucide React**      | 1.7       | Ícones                                      |
+| **Jest**              | 30        | Testes unitários                            |
+| **Testing Library**   | 16        | Testes de componentes React                 |
 
 ---
 
@@ -122,7 +124,7 @@ cp .env.example .env.local
 Edite o arquivo `.env.local` e adicione sua API key:
 
 ```env
-GOOGLE_GEMINI_API_KEY=sua_api_key_aqui
+NEXT_PUBLIC_GEMINI_API_KEY=sua_api_key_aqui
 ```
 
 ### Passo 4: Rodar o projeto
@@ -155,28 +157,28 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador e comece a 
 
 ### Variáveis de Ambiente
 
-| Variável | Obrigatória | Descrição |
-|---|---|---|
-| `GOOGLE_GEMINI_API_KEY` | ✅ Sim | Chave da API do Google Gemini |
+| Variável                     | Obrigatória | Descrição                     |
+| ---------------------------- | ----------- | ----------------------------- |
+| `NEXT_PUBLIC_GEMINI_API_KEY` | ✅ Sim      | Chave da API do Google Gemini |
 
 ### Arquivo `.env.local`
 
 ```env
 # Google Gemini API
-GOOGLE_GEMINI_API_KEY=sua_api_key_aqui
+NEXT_PUBLIC_GEMINI_API_KEY=sua_api_key_aqui
 ```
 
 ---
 
 ## 📜 Scripts Disponíveis
 
-| Script | Comando | Descrição |
-|---|---|---|
-| **dev** | `npm run dev` | Inicia o servidor de desenvolvimento com hot-reload |
-| **build** | `npm run build` | Gera o build otimizado de produção |
-| **start** | `npm run start` | Inicia o servidor de produção (requer build) |
-| **lint** | `npm run lint` | Executa o ESLint para verificação de código |
-| **test** | `npm run test` | Executa os testes unitários com Jest |
+| Script    | Comando         | Descrição                                           |
+| --------- | --------------- | --------------------------------------------------- |
+| **dev**   | `npm run dev`   | Inicia o servidor de desenvolvimento com hot-reload |
+| **build** | `npm run build` | Gera o build otimizado de produção                  |
+| **start** | `npm run start` | Inicia o servidor de produção (requer build)        |
+| **lint**  | `npm run lint`  | Executa o ESLint para verificação de código         |
+| **test**  | `npm run test`  | Executa os testes unitários com Jest                |
 
 ---
 
@@ -282,13 +284,13 @@ witcher-chat/
 
 O tema é inspirado no universo sombrio e fantástico de The Witcher 3:
 
-| Cor | Hex | Uso |
-|---|---|---|
-| 🔵 Azul Escuro | `#0a0e1a` | Background principal |
-| 🟣 Roxo Profundo | `#1a0a2e` | Gradientes e acentos |
-| 🟡 Dourado/Âmbar | `#d4a340` | Destaques, bordas, ícones |
-| ⚪ Branco Translúcido | `rgba(255,255,255,0.1)` | Glass cards |
-| 🔵 Azul Witcher | `#1e3a5f` | Elementos secundários |
+| Cor                   | Hex                     | Uso                       |
+| --------------------- | ----------------------- | ------------------------- |
+| 🔵 Azul Escuro        | `#0a0e1a`               | Background principal      |
+| 🟣 Roxo Profundo      | `#1a0a2e`               | Gradientes e acentos      |
+| 🟡 Dourado/Âmbar      | `#d4a340`               | Destaques, bordas, ícones |
+| ⚪ Branco Translúcido | `rgba(255,255,255,0.1)` | Glass cards               |
+| 🔵 Azul Witcher       | `#1e3a5f`               | Elementos secundários     |
 
 ### Glassmorphism
 
@@ -398,7 +400,7 @@ SOFTWARE.
 
 **Feito com 🐺 e ☕ por fãs de Witcher**
 
-*"O mal é o mal. Menor, maior, médio — faz diferença? O grau é arbitrário. A definição é borrada."*
+_"O mal é o mal. Menor, maior, médio — faz diferença? O grau é arbitrário. A definição é borrada."_
 — **Geralt de Rívia**
 
 </div>
